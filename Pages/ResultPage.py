@@ -14,12 +14,12 @@ class Results(BasePage):
         self.driver = driver
         self.wait_tab()
 
-    def check_first_element_link(self):
+    def check_first_element_link(self) -> None:
         with allure.step("Проверить 1 ссылка ведет на сайт tensor.ru"):
-            test = self.find_element(SearchResultLocators.FIRST_ITEM_LINK).text
-            assert 'tensor.ru' == test
+            first_element_link = self.find_element(SearchResultLocators.FIRST_ITEM_LINK).text
+            assert 'tensor.ru' == first_element_link
 
-    def check_opened_link(self):
+    def check_opened_link(self) -> None:
         with allure.step("Проверить 1 ссылка ведет на сайт tensor.ru"):
             self.click_to(SearchResultLocators.FIRST_ITEM)
             self.driver.switch_to.window(self.driver.window_handles[-1])
