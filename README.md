@@ -8,6 +8,12 @@ $ pip install -r requirements.txt
 $ python -m pytest Tests/ selenoid=<y/N> browser=<chrome> --alluredir=test_results
 $ allure serve test_results
 ```
+## Running marked tests
+
+```bash
+$ pytest -v -m pictures/search
+```
+
 ## Selenoid install
 [Installation instructions in the official repository](https://github.com/aerokube/selenoid#one-command-installation)
 ```bash
