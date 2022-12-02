@@ -5,7 +5,7 @@ from selenium import webdriver
 def pytest_addoption(parser):
     parser.addoption('--browser', action='store', default='chrome',
                      help="Choose browser:")
-    parser.addoption('--selenide', action='store', default='n',
+    parser.addoption('--selenoid', action='store', default='n',
                      help="run selenium in docker y/N:")
 
 
@@ -13,7 +13,7 @@ def pytest_addoption(parser):
 def browser(request):
     global driver
     selected_browser = request.config.getoption("browser")
-    selenide = request.config.getoption("selenide")
+    selenide = request.config.getoption("selenoid")
     if selenide == 'y':
         if selected_browser == 'chrome':
             capabilities = {
