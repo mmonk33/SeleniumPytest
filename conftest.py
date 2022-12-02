@@ -9,6 +9,11 @@ def pytest_addoption(parser):
                      help="run selenium in docker y/N:")
 
 
+def pytest_configure(config):
+    config.addinivalue_line("markers", "search: тест поиск")
+    config.addinivalue_line("markers", "pictures: тест поиск картинки")
+
+
 @pytest.fixture(scope="session")
 def browser(request):
     global driver

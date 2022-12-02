@@ -50,6 +50,10 @@ class SearchPage(BasePage):
             assert _search_field.is_displayed()
 
     def check_pictures_link_is_visible(self):
-        with allure.step("Проверить, что ссылка «Картинки» присутствует на странице"):
-            _picture_link = self.find_element(SearchLocators.PICTURES_LINK)
-            assert _picture_link.is_displayed()
+        try:
+            with allure.step("Проверить, что ссылка «Картинки» присутствует на странице"):
+                _picture_link = self.find_element(SearchLocators.PICTURES_LINK)
+                assert _picture_link.is_displayed()
+        except AssertionError as err:
+            logging.exception("Assertion Failed. Pictures link is not visible")
+            raise err
