@@ -6,7 +6,7 @@ Yandex search test task  (Selenium (Selenoid) + Py.test + Allure)
 ```bash
 $ pip install -r requirements.txt
 $ python -m pytest Tests/ selenoid=<y/N> browser=<chrome> --alluredir=test_results
-$ allure serve
+$ allure serve test_results
 ```
 ## Selenoid install
 [Installation instructions in the official repository](https://github.com/aerokube/selenoid#one-command-installation)
