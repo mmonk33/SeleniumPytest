@@ -19,3 +19,5 @@ $ pytest -v -m pictures/search
 ```bash
 $ ./cm selenoid start --vnc --tmpfs 128
 ```
+## Allure report with steps and failed assertion logs
+![image](https://user-images.githubusercontent.com/102417439/205257272-8c8496c2-eb80-41f8-8945-5b7cac56a8f7.png)
