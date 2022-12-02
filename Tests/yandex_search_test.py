@@ -1,9 +1,12 @@
+import pytest
+
 from Pages.BasePage import BasePage
 from Pages.MainPage import SearchLocators, SearchPage
 from Pages.PicturesPage import PicturesPage, PicturesPageLocators
 from Pages.ResultPage import Results
 
 
+@pytest.mark.search
 def test_yandex_search(browser):
     base = BasePage(browser)
     base.go_to_site('yandex.ru')
@@ -17,6 +20,7 @@ def test_yandex_search(browser):
     results.check_opened_link()
 
 
+@pytest.mark.pictures
 def test_yandex_search_picture(browser):
     base = BasePage(browser)
     base.go_to_site('yandex.ru')
